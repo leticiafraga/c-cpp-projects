@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 void printGrid(int size, char *lines);
 int search(int position, int size, char *grid, int wordPosition, char *word);
@@ -9,6 +10,7 @@ int main(int argc, char *argv[])
 {
 
     int size = 4;
+    int squareSize = size * size;
 
     if (argc == 1)
     {
@@ -16,7 +18,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    char *grid;
+    char *grid = malloc(squareSize * sizeof(char));
 
     for (int i = 1; i < argc; i++)
     {
@@ -31,33 +33,42 @@ int main(int argc, char *argv[])
         }
     }
 
+    if (!grid || strlen(grid) != squareSize)
+        return 84;
+
     printGrid(size, grid);
 
-    char *word = malloc(size);
+    char *word = malloc(size * sizeof(char));
     int a;
     do
     {
         scanf("%s", word);
-
         int len = strlen(word);
 
-        for (int i = 0; i < size * size; i++)
+        for (int i = 0; i < squareSize; i++)
         {
 
             if (*(grid + i) == word[0])
             {
 
+                grid[i] = toupper(grid[i]);
                 int found = search(i, size, grid, 1, word);
                 if (found != 0)
                 {
                     printf("%d\n", found);
                 }
+                else
+                {
+                    grid[i] = tolower(grid[i]);
+                }
             }
         }
+        printGrid(size, grid);
 
     } while (word[0] != '0');
 
     free(word);
+    free(grid);
 
     return (0);
 }
@@ -102,9 +113,44 @@ int search(int position, int size, char *grid, int wordPosition, char *word)
     if (position % size != (size - 1) && *(grid + position + 1) == word[wordPosition])
     {
         found = search(position + 1, size, grid, wordPosition + 1, word);
+        grid[position + 1] = toupper(grid[position + 1]);
         if (found)
             return found;
+        else
+            grid[position + 1] = tolower(grid[position + 1]);
     }
 
+    // search left
+    if (position % size != (size) && *(grid + position - 1) == word[wordPosition])
+    {
+        found = search(position - 1, size, grid, wordPosition + 1, word);
+        grid[position - 1] = toupper(grid[position - 1]);
+        if (found)
+            return found;
+        else
+            grid[position - 1] = tolower(grid[position - 1]);
+    }
+    // search down
+    if (position + size < maxPosition && *(grid + position + size) == word[wordPosition])
+    {
+        char current = *(grid + position + size);
+        found = search(position + size, size, grid, wordPosition + 1, word);
+        grid[position + size] = toupper(grid[position + size]);
+        if (found)
+            return found;
+        else
+            grid[position + size] = tolower(grid[position + size]);
+    }
+    // search top
+    if (position - size >= 0 && *(grid + position - size) == word[wordPosition])
+    {
+        char current = *(grid + position - size);
+        found = search(position - size, size, grid, wordPosition + 1, word);
+        grid[position - size] = toupper(grid[position - size]);
+        if (found)
+            return found;
+        else
+            grid[position - size] = tolower(grid[position - size]);
+    }
     return found;
 }
