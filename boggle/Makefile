@@ -1,6 +1,17 @@
 
-boggle: boggle.c 
-	gcc -o boggle boggle.c 
+NAME = boggle
+SRC = ./$(NAME).c
+OBJ = $(SRC:.c=.o)
+
+$(NAME): $(OBJ)
+	gcc -o $(NAME) $(OBJ)
+
+all: $(NAME)
 
 clean:
-	rm -f boggle
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all

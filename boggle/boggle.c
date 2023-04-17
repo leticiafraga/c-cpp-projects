@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 {
 
     int size = 4;
-    int squareSize = size * size;
 
     if (argc == 1)
     {
@@ -18,44 +17,61 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    char *grid = malloc(squareSize * sizeof(char));
+    char *grid;
+    char *word = malloc(30 * sizeof(char));
+    word[0] = '\0';
 
-    for (int i = 1; i < argc; i++)
+    for (int i = 1; i < argc - 1; i++)
     {
-        if (i + 1 != argc)
+
+        if (strcmp(argv[i], "-g") == 0)
         {
-            if (strcmp(argv[i], "-g") == 0)
-            {
-                char *filename = argv[i + 1];
-                grid = filename;
-                i++;
-            }
+            grid = argv[i + 1];
+            i++;
+        }
+        else if (strcmp(argv[i], "-s") == 0)
+        {
+            size = atoi(argv[i + 1]);
+            i++;
+        }
+        else if (strcmp(argv[i], "-w") == 0)
+        {
+            strcpy(word, argv[i + 1]);
+
+            i++;
         }
     }
 
+    int squareSize = size * size;
+
     if (!grid || strlen(grid) != squareSize)
+    {
+        fprintf(stderr, "The grid provided does not have the correct length (%d)\n", squareSize);
         return 84;
+    }
 
-    printGrid(size, grid);
-
-    char *word = malloc(size * sizeof(char));
     int a;
-    do
+
+    if (word[0] == '\0')
     {
         scanf("%s", word);
+        printGrid(size, grid);
+    }
+    while (word && strlen(word) > 0 && word[0] != '0' && word[0] != '\0')
+    {
         int len = strlen(word);
 
+        int found = 0;
         for (int i = 0; i < squareSize; i++)
         {
-
             if (*(grid + i) == word[0])
             {
-
                 grid[i] = toupper(grid[i]);
-                int found = search(i, size, grid, 1, word);
+                found = search(i, size, grid, 1, word);
                 if (found != 0)
                 {
-                    printf("%d\n", found);
+                    printGrid(size, grid);
+                    break;
                 }
                 else
                 {
@@ -63,12 +79,17 @@ int main(int argc, char *argv[])
                 }
             }
         }
-        printGrid(size, grid);
+        if (found == 0)
+        {
 
-    } while (word[0] != '0');
+            printf("The word \"%s\" is not in the grid.\n", word);
+        }
 
-    free(word);
-    free(grid);
+        word[0] = '\0';
+        scanf("%s", word);
+    }
+
+    // free(word);
 
     return (0);
 }
@@ -121,7 +142,7 @@ int search(int position, int size, char *grid, int wordPosition, char *word)
     }
 
     // search left
-    if (position % size != (size) && *(grid + position - 1) == word[wordPosition])
+    if (position % size != 0 && *(grid + position - 1) == word[wordPosition])
     {
         found = search(position - 1, size, grid, wordPosition + 1, word);
         grid[position - 1] = toupper(grid[position - 1]);
@@ -152,5 +173,6 @@ int search(int position, int size, char *grid, int wordPosition, char *word)
         else
             grid[position - size] = tolower(grid[position - size]);
     }
+
     return found;
 }
