@@ -1,11 +1,14 @@
 #include "toy.h"
 
+#ifndef LITTLE_PONY
+#define LITTLE_PONY
+
 class LittlePony : public Toy
 {
 
 public:
-    virtual void isTaken();
-
-private:
-    string title;
+    LittlePony(string title);
+    void isTaken();
 };
+
+#endif

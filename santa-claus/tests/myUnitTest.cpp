@@ -1,8 +1,12 @@
-Object **MyUnitTests()
-{
-    Object **toys = new Object *[2];
+#include "../object.h"
+#include "../teddy.h"
+#include "../littlePony.h"
 
-    toys[0] = new LittlePony("happy pony");
-    toys[1] = new Teddy("cuddles");
-    return toys;
-}
+// Object **MyUnitTests()
+// {
+//     // Object *toys[2];
+
+//     // *toys[0] = LittlePony("happy pony");
+//     // *toys[1] = LittlePony("happy pony");
+//     // return toys;
+// }
