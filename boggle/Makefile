@@ -1,7 +1,7 @@
 
 NAME = boggle
-SRC = ./$(NAME).c
-OBJ = $(SRC:.c=.o)
+SRC = ./$(NAME).cpp
+OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
 	gcc -o $(NAME) $(OBJ)

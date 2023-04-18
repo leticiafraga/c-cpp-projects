@@ -54,8 +54,8 @@ int main(int argc, char *argv[])
 
     if (word[0] == '\0')
     {
-        scanf("%s", word);
         printGrid(size, grid);
+        scanf("%s", word);
     }
     while (word && strlen(word) > 0 && word[0] != '0' && word[0] != '\0')
     {
