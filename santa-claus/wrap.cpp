@@ -1,4 +1,4 @@
-#include "header/wrap.h"
+#include "header/wrap.hpp"
 
 Wrap::Wrap()
 {

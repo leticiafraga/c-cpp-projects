@@ -1,4 +1,4 @@
-#include "header/object.h"
+#include "header/object.hpp"
 
 string Object::getTitle()
 {

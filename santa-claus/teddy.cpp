@@ -1,4 +1,4 @@
-#include "header/teddy.h"
+#include "header/teddy.hpp"
 
 void Teddy::isTaken()
 {

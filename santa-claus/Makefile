@@ -1,11 +1,15 @@
 
 NAME = main
-SRC = ./$(NAME).cpp \
-	./wrap.cpp
-OBJ = $(SRC:.cpp=.o)
+SRC := $(wildcard *.cpp)
+OBJ := $(patsubst %.cpp,%.o,$(SRC))
 
-main:
-	g++ -o main main.cpp wrap.cpp object.cpp toy.cpp littlePony.cpp
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	g++ -o $@ $^
+
+%.o: %.cpp
+	g++ -c $<
 
 clean:
 	rm -f $(OBJ)
@@ -14,3 +18,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+

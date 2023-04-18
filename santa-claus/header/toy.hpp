@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "object.h"
+#include "object.hpp"
 
 using namespace std;
 

@@ -1,5 +1,5 @@
-#include "header/littlePony.h"
-#include "header/toy.h"
+#include "header/littlePony.hpp"
+#include "header/toy.hpp"
 
 void LittlePony::isTaken()
 {

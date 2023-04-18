@@ -1,5 +1,5 @@
-#include "header/toy.h"
-#include "header/object.h"
+#include "header/toy.hpp"
+#include "header/object.hpp"
 
 void Toy::isTaken()
 {

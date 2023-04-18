@@ -1,7 +1,7 @@
 #ifndef WRAP
 #define WRAP
 
-#include "object.h"
+#include "object.hpp"
 
 using namespace std;
 

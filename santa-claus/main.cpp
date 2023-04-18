@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "header/wrap.h"
-#include "header/littlePony.h"
+#include "header/wrap.hpp"
+#include "header/littlePony.hpp"
 
 using namespace std;
 

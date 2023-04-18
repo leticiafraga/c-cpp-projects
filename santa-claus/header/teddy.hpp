@@ -1,4 +1,4 @@
-#include "toy.h"
+#include "toy.hpp"
 
 #ifndef TEDDY
 #define TEDDY

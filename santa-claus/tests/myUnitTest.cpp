@@ -1,6 +1,6 @@
-#include "../object.h"
-#include "../teddy.h"
-#include "../littlePony.h"
+#include "../object.hpp"
+#include "../teddy.hpp"
+#include "../littlePony.hpp"
 
 // Object **MyUnitTests()
 // {
