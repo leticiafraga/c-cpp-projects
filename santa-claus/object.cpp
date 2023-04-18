@@ -1,11 +1,10 @@
 #include "header/object.hpp"
 
-string Object::getTitle()
+void Object::print(ostream &output)
 {
-    return this->title;
+    output << "object\n";
 }
 
-Object::Object(string _title)
+Object::Object()
 {
-    this->title = _title;
 }

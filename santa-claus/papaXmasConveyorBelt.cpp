@@ -1,21 +1,22 @@
-#include "header/papaXmasConveyorBelt.hpp"
+// #include "header/papaXmasConveyorBelt.hpp"
 
-void PapaXmasConveyorBelt::put(Object o)
-{
-}
+// void PapaXmasConveyorBelt::put(Object o)
+// {
+// }
 
-void PapaXmasConveyorBelt::take(Object o)
-{
-}
+// void PapaXmasConveyorBelt::take(Object o)
+// {
+// }
 
-void PapaXmasConveyorBelt::pressIn()
-{
-}
+// void PapaXmasConveyorBelt::pressIn()
+// {
+// }
 
-Object PapaXmasConveyorBelt::pressOut()
-{
-}
+// Object PapaXmasConveyorBelt::pressOut()
+// {
+// }
 
-string PapaXmasConveyorBelt::getWhat()
-{
-}
+// string PapaXmasConveyorBelt::getWhat()
+// {
+//     return "";
+// }

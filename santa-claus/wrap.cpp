@@ -1,6 +1,6 @@
 #include "header/wrap.hpp"
 
-Wrap::Wrap()
+Wrap::Wrap() : Object()
 {
     cout << "whistles while working" << endl;
 }

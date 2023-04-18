@@ -8,13 +8,9 @@ using namespace std;
 
 class Object
 {
-private:
-    string title;
-
 public:
     Object();
-    Object(string title);
-    string getTitle();
+    virtual void print(ostream &output);
 };
 
 Object **MyUnitTests();

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Wrap
+class Wrap : Object
 {
 public:
     Wrap();

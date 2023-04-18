@@ -6,6 +6,12 @@ void Toy::isTaken()
     cout << "toy" << endl;
 }
 
-Toy::Toy(string title) : Object(title)
+Toy::Toy(string _title) : Object()
 {
+    this->title = _title;
+}
+
+void Toy::print(ostream &output)
+{
+    output << title << endl;
 }
