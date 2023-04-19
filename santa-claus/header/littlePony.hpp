@@ -7,7 +7,7 @@ class LittlePony : public Toy
 {
 
 public:
-    LittlePony(string title);
+    LittlePony(std::string title);
     void isTaken();
 };
 

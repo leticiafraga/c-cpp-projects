@@ -2,9 +2,9 @@
 
 void Teddy::isTaken()
 {
-    cout << "gra hu" << endl;
+    std::cout << "gra hu" << std::endl;
 }
 
-Teddy::Teddy(string title) : Toy(title)
+Teddy::Teddy(std::string title) : Toy(title)
 {
 }

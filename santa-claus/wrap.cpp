@@ -2,18 +2,18 @@
 
 Wrap::Wrap() : Object()
 {
-    cout << "whistles while working" << endl;
+    std::cout << "whistles while working" << std::endl;
 }
 
 void Wrap::wrapMeThat(Object *that)
 {
     if (this->content)
     {
-        cerr << "I already have an object" << endl;
+        std::cerr << "I already have an object" << std::endl;
     }
     else
     {
-        cerr << "tuuuut tuuut tuut" << endl;
+        std::cerr << "tuuuut tuuut tuut" << std::endl;
         this->content = that;
     }
 }

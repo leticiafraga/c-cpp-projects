@@ -1,10 +1,16 @@
 #include "header/object.hpp"
+#include <string>
 
-void Object::print(ostream &output)
+void Object::print(std::ostream &output)
 {
-    output << "object\n";
+    output << title << std::endl;
 }
 
 Object::Object()
 {
+}
+
+Object::Object(std::string _title)
+{
+    this->title = _title;
 }

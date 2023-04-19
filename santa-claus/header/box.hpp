@@ -3,8 +3,6 @@
 
 #include "wrap.hpp"
 
-using namespace std;
-
 class Box : public Wrap
 {
 public:

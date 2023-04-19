@@ -3,9 +3,9 @@
 
 void LittlePony::isTaken()
 {
-    cout << "yo man" << endl;
+    std::cout << "yo man" << std::endl;
 }
 
-LittlePony::LittlePony(string title) : Toy(title)
+LittlePony::LittlePony(std::string title) : Toy(title)
 {
 }

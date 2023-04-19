@@ -1,22 +1,37 @@
-// #include "header/papaXmasConveyorBelt.hpp"
+#include "header/papaXmasConveyorBelt.hpp"
 
-// void PapaXmasConveyorBelt::put(Object o)
-// {
-// }
+PapaXmasConveyorBelt::PapaXmasConveyorBelt()
+{
+    content = nullptr;
+}
 
-// void PapaXmasConveyorBelt::take(Object o)
-// {
-// }
+void PapaXmasConveyorBelt::put(Object *o)
+{
+    if (this->content)
+        content = o;
+    else
+        std::cerr << "I already have something" << std::endl;
+}
 
-// void PapaXmasConveyorBelt::pressIn()
-// {
-// }
+Object *PapaXmasConveyorBelt::take()
+{
+    if (this->content)
+        std::cerr << "There is no content" << std::endl;
+    Object *aux = content;
+    content = nullptr;
+    return aux;
+}
 
-// Object PapaXmasConveyorBelt::pressOut()
-// {
-// }
+Wrap *PapaXmasConveyorBelt::pressIn()
+{
+    return new Wrap();
+}
 
-// string PapaXmasConveyorBelt::getWhat()
-// {
-//     return "";
-// }
+Object PapaXmasConveyorBelt::pressOut()
+{
+}
+
+std::string PapaXmasConveyorBelt::getWhat()
+{
+    return "";
+}

@@ -5,7 +5,6 @@
 #include "header/giftPaper.hpp"
 #include <iostream>
 #include <typeinfo>
-using namespace std;
 
 Object **MyUnitTests()
 {
@@ -40,13 +39,13 @@ Object *MyUnitTests(Object **objects)
                 return giftPaper;
             }
             else
-                cerr << "Was expecting a Box as second element" << endl;
+                std::cerr << "Was expecting a Box as second element" << std::endl;
         }
         else
-            cerr << "Was expecting a Box as second element" << endl;
+            std::cerr << "Was expecting a Box as second element" << std::endl;
     }
     else
-        cerr << "Was expecting a Teddy as first element" << endl;
+        std::cerr << "Was expecting a Teddy as first element" << std::endl;
 
     return nullptr;
 }
@@ -69,9 +68,9 @@ Object *MyUnitTestsWrapTwice(Object **objects)
             return box;
         }
         else
-            cerr << "Was expecting a Box as second element" << endl;
+            std::cerr << "Was expecting a Box as second element" << std::endl;
     }
     else
-        cerr << "Was expecting a Teddy as first element" << endl;
+        std::cerr << "Was expecting a Teddy as first element" << std::endl;
     return nullptr;
 }

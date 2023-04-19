@@ -9,12 +9,10 @@ using namespace std;
 
 class Toy : public Object
 {
-private:
-    string title;
 public:
-    Toy(string title);
+    Toy(std::string title);
     virtual void isTaken();
-    void print(ostream &output);
+    void print(std::ostream &output);
 };
 
 #endif

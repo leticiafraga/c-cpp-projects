@@ -6,11 +6,13 @@ using namespace std;
 class PapaXmasTable : public ITable
 {
 private:
-    vector<Object> items;
+    std::vector<Object *> *items;
     static const int size = 10;
+    bool collapsed = false;
 
 public:
-    void put(Object o);
-    void take(Object o);
-    vector<Object> look();
+    void
+    put(Object *o);
+    void take(std::string *title);
+    std::vector<Object *> *look();
 };

@@ -3,15 +3,14 @@
 
 void Toy::isTaken()
 {
-    cout << "toy" << endl;
+    std::cout << "toy" << std::endl;
 }
 
-Toy::Toy(string _title) : Object()
+Toy::Toy(std::string _title) : Object(_title)
 {
-    this->title = _title;
 }
 
-void Toy::print(ostream &output)
+void Toy::print(std::ostream &output)
 {
-    output << title << endl;
+    output << title << std::endl;
 }

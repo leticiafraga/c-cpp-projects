@@ -7,21 +7,19 @@
 #include "header/box.hpp"
 #include "header/giftPaper.hpp"
 
-using namespace std;
-
 Object **MyUnitTests();
 
 int main()
 {
     // part 1
-    cout << "First test" << endl;
+    std::cout << "First test" << std::endl;
     Object **toys = MyUnitTests();
 
-    toys[0]->print(cout);
-    toys[1]->print(cout);
+    toys[0]->print(std::cout);
+    toys[1]->print(std::cout);
 
     // part 2
-    cout << "Second test" << endl;
+    std::cout << "Second test" << std::endl;
     Object **toys2 = new Object *[3];
 
     Box *box = new Box();
@@ -31,7 +29,7 @@ int main()
     toys2[2] = giftPaper;
 
     Object *finalObj = MyUnitTests(toys2);
-    cout << "Wrap twice with same wrap" << endl;
+    std::cout << "Wrap twice with same wrap" << std::endl;
     Box *box2 = new Box();
 
     toys2[0] = toys[1];

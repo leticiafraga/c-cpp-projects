@@ -6,7 +6,7 @@
 class Teddy : public Toy
 {
 public:
-    Teddy(string title);
+    Teddy(std::string title);
     void isTaken();
 };
 

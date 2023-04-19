@@ -9,7 +9,7 @@ void Box::wrapMeThat(Object *that)
 {
     if (!this->open)
     {
-        cerr << "I am closed" << endl;
+        std::cerr << "I am closed" << std::endl;
     }
     else
     {

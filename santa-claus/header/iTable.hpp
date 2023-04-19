@@ -3,7 +3,7 @@
 
 class ITable
 {
-    virtual void put(Object o) = 0;
-    virtual void take(Object o) = 0;
-    virtual vector<Object> look() = 0;
+    virtual void put(Object *o) = 0;
+    virtual void take(Object *o) = 0;
+    virtual std::vector<Object *> *look() = 0;
 };

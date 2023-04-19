@@ -3,13 +3,15 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class Object
 {
+protected:
+    std::string title;
+
 public:
     Object();
-    virtual void print(ostream &output);
+    Object(std::string title);
+    virtual void print(std::ostream &output);
 };
 
 Object **MyUnitTests();

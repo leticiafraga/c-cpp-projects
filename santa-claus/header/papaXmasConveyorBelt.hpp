@@ -3,13 +3,13 @@
 class PapaXmasConveyorBelt : IConveyorBelt
 {
 private:
-    Object what;
-    int size;
+    Object *content;
 
 public:
-    void put(Object o);
-    void take(Object o);
-    void pressIn();
+    PapaXmasConveyorBelt();
+    void put(Object *o);
+    Object *take();
+    Wrap *pressIn();
     Object pressOut();
-    string getWhat();
+    std::string getWhat();
 };
