@@ -1,15 +1,17 @@
 #ifndef BOX
 #define BOX
 
+#include "wrap.hpp"
+
 using namespace std;
 
-class Box
+class Box : public Wrap
 {
 public:
-    void wrapMeThat();
+    Box();
+    void wrapMeThat(Object *that);
+    void openMe();
     void closeMe();
-
-private:
     bool open;
 };
 

@@ -1,12 +1,15 @@
 #ifndef GIFT_PAPER
 #define GIFT_PAPER
 
+#include "wrap.hpp"
+
 using namespace std;
 
-class GiftPaper
+class GiftPaper : public Wrap
 {
 public:
-    void wrapMeThat();
+    GiftPaper();
+    void wrapMeThat(Object *that);
 };
 
 #endif

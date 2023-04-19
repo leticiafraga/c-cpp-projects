@@ -7,6 +7,17 @@ Wrap::Wrap() : Object()
 
 void Wrap::wrapMeThat(Object *that)
 {
-    cout << "tuuuut tuuut tuut" << endl;
-    this->content = that;
+    if (this->content)
+    {
+        cout << "I already have an object" << endl;
+    }
+    else
+    {
+        cout << "tuuuut tuuut tuut" << endl;
+        this->content = that;
+    }
+}
+
+void Wrap::openMe()
+{
 }
