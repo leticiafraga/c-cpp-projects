@@ -5,8 +5,6 @@
 #include <string>
 #include "object.hpp"
 
-using namespace std;
-
 class Toy : public Object
 {
 public:

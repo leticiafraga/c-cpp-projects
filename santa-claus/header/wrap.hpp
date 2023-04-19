@@ -3,8 +3,6 @@
 
 #include "object.hpp"
 
-using namespace std;
-
 class Wrap : public Object
 {
 public:
