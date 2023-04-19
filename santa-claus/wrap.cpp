@@ -9,11 +9,11 @@ void Wrap::wrapMeThat(Object *that)
 {
     if (this->content)
     {
-        cout << "I already have an object" << endl;
+        cerr << "I already have an object" << endl;
     }
     else
     {
-        cout << "tuuuut tuuut tuut" << endl;
+        cerr << "tuuuut tuuut tuut" << endl;
         this->content = that;
     }
 }

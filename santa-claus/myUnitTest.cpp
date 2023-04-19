@@ -40,19 +40,14 @@ Object *MyUnitTests(Object **objects)
                 return giftPaper;
             }
             else
-            {
-                cout << "Was expecting a Box as second element" << endl;
-            }
+                cerr << "Was expecting a Box as second element" << endl;
         }
         else
-        {
-            cout << "Was expecting a Box as second element" << endl;
-        }
+            cerr << "Was expecting a Box as second element" << endl;
     }
     else
-    {
-        cout << "Was expecting a Teddy as first element" << endl;
-    }
+        cerr << "Was expecting a Teddy as first element" << endl;
+
     return nullptr;
 }
 
@@ -74,13 +69,9 @@ Object *MyUnitTestsWrapTwice(Object **objects)
             return box;
         }
         else
-        {
-            cout << "Was expecting a Box as second element" << endl;
-        }
+            cerr << "Was expecting a Box as second element" << endl;
     }
     else
-    {
-        cout << "Was expecting a Teddy as first element" << endl;
-    }
+        cerr << "Was expecting a Teddy as first element" << endl;
     return nullptr;
 }

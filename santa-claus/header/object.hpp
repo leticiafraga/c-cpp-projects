@@ -1,7 +1,6 @@
 #ifndef OBJECT
 #define OBJECT
 #include <iostream>
-
 #include <string>
 
 using namespace std;
