@@ -11,7 +11,9 @@ protected:
 public:
     Object();
     Object(std::string title);
-    virtual void print(std::ostream &output);
+    void print(std::ostream &output);
+    std::string getTitle();
+    virtual ~Object();
 };
 
 Object **MyUnitTests();

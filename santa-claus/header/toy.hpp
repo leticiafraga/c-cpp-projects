@@ -11,6 +11,7 @@ public:
     Toy(std::string title);
     virtual void isTaken();
     void print(std::ostream &output);
+    std::string getTitle();
 };
 
 #endif

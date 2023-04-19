@@ -7,8 +7,14 @@ void PapaXmasTable::put(Object *o)
         std::cerr << "Table collapsed";
     else
     {
-        this->items->push_back(o);
-        if (this->items->size() > this->size)
+        bool added = false;
+        for (int i = 0; i < 11; ++i)
+            if (!this->items[i])
+            {
+                this->items[i] = o;
+                added = true;
+            }
+        if (!added)
         {
             std::cerr << "Table collapsed";
             this->collapsed = true;
@@ -16,26 +22,15 @@ void PapaXmasTable::put(Object *o)
     }
 }
 
-void PapaXmasTable::take(std::string *title)
+Object *PapaXmasTable::take(std::string *title)
 {
-
-    if (collapsed)
-        std::cerr << "Table collapsed";
-    else
-    {
-
-        // auto it = find_if(this->items->begin(), this->items->end(), [title](const Object &obj)
-        //                   { return obj.getTitle() == mystd::string; }) if (position != this->items->end()) this->items->erase(position);
-        // this->items->push_back(o);
-        if (this->items->size() > this->size)
-        {
-            std::cerr << "Table collapsed";
-            this->collapsed = true;
-        }
-    }
+    for (int i = 0; i < this->amount; i++)
+        if (items[i]->getTitle().compare(*title))
+            return items[i];
+    return nullptr;
 }
 
-std::vector<Object *> *PapaXmasTable::look()
+std::string *PapaXmasTable::look()
 {
     if (collapsed)
     {
@@ -43,5 +38,11 @@ std::vector<Object *> *PapaXmasTable::look()
         return nullptr;
     }
     else
-        return this->items;
+    {
+        std::string *titles = new std::string[amount];
+
+        for (int i = 0; i < this->amount; i++)
+            titles[amount] = items[amount]->getTitle();
+        return titles;
+    }
 }

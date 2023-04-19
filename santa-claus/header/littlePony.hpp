@@ -9,6 +9,7 @@ class LittlePony : public Toy
 public:
     LittlePony(std::string title);
     void isTaken();
+    std::string getTitle();
 };
 
 #endif

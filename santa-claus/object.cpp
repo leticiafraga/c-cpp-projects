@@ -1,5 +1,4 @@
 #include "header/object.hpp"
-#include <string>
 
 void Object::print(std::ostream &output)
 {
@@ -13,4 +12,13 @@ Object::Object()
 Object::Object(std::string _title)
 {
     this->title = _title;
+}
+
+std::string Object::getTitle()
+{
+    return this->title;
+}
+
+Object::~Object()
+{
 }
