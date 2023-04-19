@@ -15,7 +15,7 @@ void PapaXmasConveyorBelt::put(Object *o)
 
 Object *PapaXmasConveyorBelt::take()
 {
-    if (this->content)
+    if (!this->content)
         std::cerr << "There is no content" << std::endl;
     Object *aux = content;
     content = nullptr;
@@ -27,8 +27,14 @@ Wrap *PapaXmasConveyorBelt::pressIn()
     return new Wrap();
 }
 
-Object PapaXmasConveyorBelt::pressOut()
+void *PapaXmasConveyorBelt::pressOut()
 {
+    if (!this->content)
+        std::cerr << "There is no content" << std::endl;
+    Object *aux = content;
+    content = nullptr;
+    std::cout << "Sending to Santa" << std::endl;
+    return aux;
 }
 
 std::string PapaXmasConveyorBelt::getWhat()

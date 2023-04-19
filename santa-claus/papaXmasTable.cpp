@@ -1,18 +1,24 @@
 #include "header/papaXmasTable.hpp"
 #include <algorithm>
 
+PapaXmasTable::PapaXmasTable()
+{
+    this->collapsed = false;
+}
+
 void PapaXmasTable::put(Object *o)
 {
-    if (collapsed)
+    if (collapsed == true)
         std::cerr << "Table collapsed";
     else
     {
         bool added = false;
         for (int i = 0; i < 11; ++i)
-            if (!this->items[i])
+            if (this->items[i] == nullptr)
             {
                 this->items[i] = o;
                 added = true;
+                break;
             }
         if (!added)
         {
@@ -24,7 +30,7 @@ void PapaXmasTable::put(Object *o)
 
 Object *PapaXmasTable::take(std::string *title)
 {
-    for (int i = 0; i < this->amount; i++)
+    for (int i = 0; i < 11; i++)
         if (items[i]->getTitle().compare(*title))
             return items[i];
     return nullptr;
@@ -39,10 +45,27 @@ std::string *PapaXmasTable::look()
     }
     else
     {
-        std::string *titles = new std::string[amount];
+        std::string *titles = new std::string[11];
+        int last = -1;
 
-        for (int i = 0; i < this->amount; i++)
-            titles[amount] = items[amount]->getTitle();
+        for (int i = 0; i < 11; ++i)
+        {
+            if ((this->items[i] != nullptr))
+            {
+                titles[i] = items[i]->getTitle();
+                std::cout << items[i]->getTitle() << std::endl;
+                last = i;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if (last != -1)
+        {
+            titles[last + 1] = nullptr;
+        }
+
         return titles;
     }
 }

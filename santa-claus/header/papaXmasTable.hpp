@@ -7,12 +7,12 @@
 class PapaXmasTable : public ITable
 {
 private:
-    Object *items[10];
-    static const int size;
-    int amount = 0;
-    bool collapsed = false;
+    Object *items[10] = {nullptr};
+    static const int size = 10;
+    bool collapsed;
 
 public:
+    PapaXmasTable();
     void put(Object *o);
     Object *take(std::string *title);
     std::string *look();

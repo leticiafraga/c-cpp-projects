@@ -6,8 +6,7 @@
 #include "header/teddy.hpp"
 #include "header/box.hpp"
 #include "header/giftPaper.hpp"
-
-Object **MyUnitTests();
+#include "header/helpers.hpp"
 
 int main()
 {
@@ -35,6 +34,12 @@ int main()
     toys2[0] = toys[1];
     toys2[1] = box2;
     MyUnitTestsWrapTwice(toys2);
+
+    std::cout << "Table test" << std::endl;
+    ITable *table = createTable();
+
+    table->put(toys[1]);
+    std::cout << table->look()[0];
 
     return 0;
 }

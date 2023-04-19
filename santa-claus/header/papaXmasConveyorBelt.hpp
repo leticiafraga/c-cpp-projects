@@ -1,6 +1,6 @@
 #include "iConveyorBelt.hpp"
 
-class PapaXmasConveyorBelt : IConveyorBelt
+class PapaXmasConveyorBelt : public IConveyorBelt
 {
 private:
     Object *content;
@@ -10,6 +10,6 @@ public:
     void put(Object *o);
     Object *take();
     Wrap *pressIn();
-    Object pressOut();
+    void *pressOut();
     std::string getWhat();
 };
