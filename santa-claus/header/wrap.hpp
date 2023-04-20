@@ -7,6 +7,7 @@ class Wrap : public Object
 {
 public:
     Wrap();
+    Wrap(std::string title);
     void wrapMeThat(Object *that);
     void openMe();
 

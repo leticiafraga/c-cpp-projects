@@ -1,12 +1,12 @@
 #include "iConveyorBelt.hpp"
 
-class PapaXmasConveyorBelt : public IConveyorBelt
+class ConveyorBeltRand : public IConveyorBelt
 {
 private:
     Object *content;
 
 public:
-    PapaXmasConveyorBelt();
+    ConveyorBeltRand();
     void put(Object *o);
     Object *take();
     Wrap *pressIn();

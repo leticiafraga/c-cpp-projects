@@ -5,6 +5,10 @@ Box::Box() : Wrap()
     open = false;
 }
 
+Box::Box(std::string title) : Wrap(title)
+{
+}
+
 void Box::wrapMeThat(Object *that)
 {
     if (!this->open)

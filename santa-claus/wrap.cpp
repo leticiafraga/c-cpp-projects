@@ -5,6 +5,11 @@ Wrap::Wrap() : Object()
     std::cout << "whistles while working" << std::endl;
 }
 
+Wrap::Wrap(std::string title) : Object(title)
+{
+    std::cout << "whistles while working" << std::endl;
+}
+
 void Wrap::wrapMeThat(Object *that)
 {
     if (this->content)

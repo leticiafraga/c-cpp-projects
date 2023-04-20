@@ -1,4 +1,7 @@
 #include "header/papaXmasConveyorBelt.hpp"
+#include "header/box.hpp"
+#include "header/giftPaper.hpp"
+#include <cstdlib>
 
 PapaXmasConveyorBelt::PapaXmasConveyorBelt()
 {

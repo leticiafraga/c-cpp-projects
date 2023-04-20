@@ -7,6 +7,7 @@ class GiftPaper : public Wrap
 {
 public:
     GiftPaper();
+    GiftPaper(std::string title);
     void wrapMeThat(Object *that);
 };
 

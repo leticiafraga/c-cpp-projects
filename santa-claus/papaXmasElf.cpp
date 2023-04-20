@@ -24,11 +24,11 @@ void PapaXmasElf::putTable(Object *o)
 }
 Object *PapaXmasElf::takeTable(std::string *title)
 {
-    this->table->take(title);
+    return this->table->take(title);
 }
 std::string *PapaXmasElf::lookTable()
 {
-    this->table->look();
+    return this->table->look();
 }
 void PapaXmasElf::putConveyorBelt(Object *o)
 {
@@ -36,11 +36,11 @@ void PapaXmasElf::putConveyorBelt(Object *o)
 }
 Object *PapaXmasElf::takeConveyorBelt()
 {
-    this->conveyorBelt->take();
+    return this->conveyorBelt->take();
 }
 Wrap *PapaXmasElf::pressIn()
 {
-    this->conveyorBelt->pressIn();
+    return this->conveyorBelt->pressIn();
 }
 void *PapaXmasElf::pressOut()
 {
