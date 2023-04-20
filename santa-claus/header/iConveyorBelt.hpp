@@ -11,7 +11,6 @@ public:
     virtual Object *take() = 0;
     virtual Wrap *pressIn() = 0;
     virtual void *pressOut() = 0;
-    virtual std::string getWhat() = 0;
 };
 
 #endif

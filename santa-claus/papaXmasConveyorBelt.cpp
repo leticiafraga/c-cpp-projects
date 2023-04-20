@@ -24,7 +24,9 @@ Object *PapaXmasConveyorBelt::take()
 
 Wrap *PapaXmasConveyorBelt::pressIn()
 {
-    return new Wrap();
+    Wrap *wrap = new Wrap();
+    this->content = wrap;
+    return wrap;
 }
 
 void *PapaXmasConveyorBelt::pressOut()
@@ -35,9 +37,4 @@ void *PapaXmasConveyorBelt::pressOut()
     content = nullptr;
     std::cout << "Sending to Santa" << std::endl;
     return aux;
-}
-
-std::string PapaXmasConveyorBelt::getWhat()
-{
-    return "";
 }

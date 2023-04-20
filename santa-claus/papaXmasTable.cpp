@@ -4,16 +4,17 @@
 PapaXmasTable::PapaXmasTable()
 {
     this->collapsed = false;
+    this->items = new Object *[10];
 }
 
 void PapaXmasTable::put(Object *o)
 {
     if (collapsed == true)
-        std::cerr << "Table collapsed";
+        std::cerr << "Table collapsed" << std::endl;
     else
     {
         bool added = false;
-        for (int i = 0; i < 11; ++i)
+        for (int i = 0; i < 10; ++i)
             if (this->items[i] == nullptr)
             {
                 this->items[i] = o;
@@ -22,7 +23,7 @@ void PapaXmasTable::put(Object *o)
             }
         if (!added)
         {
-            std::cerr << "Table collapsed";
+            std::cerr << "Table collapsed" << std::endl;
             this->collapsed = true;
         }
     }
@@ -40,7 +41,7 @@ std::string *PapaXmasTable::look()
 {
     if (collapsed)
     {
-        std::cerr << "Table collapsed";
+        std::cerr << "Table collapsed" << std::endl;
         return nullptr;
     }
     else
@@ -48,22 +49,19 @@ std::string *PapaXmasTable::look()
         std::string *titles = new std::string[11];
         int last = -1;
 
-        for (int i = 0; i < 11; ++i)
+        for (int i = 0; i < 11; i++)
         {
             if ((this->items[i] != nullptr))
             {
                 titles[i] = items[i]->getTitle();
-                std::cout << items[i]->getTitle() << std::endl;
                 last = i;
             }
             else
             {
+                // setting last element to empty string because strings cannnot be null
+                titles[i] = "";
                 break;
             }
-        }
-        if (last != -1)
-        {
-            titles[last + 1] = nullptr;
         }
 
         return titles;

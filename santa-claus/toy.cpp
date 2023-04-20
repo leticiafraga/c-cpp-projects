@@ -14,3 +14,8 @@ void Toy::print(std::ostream &output)
 {
     output << title << std::endl;
 }
+
+std::string Toy::getTitle()
+{
+    return Object::getTitle();
+}

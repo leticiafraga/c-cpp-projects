@@ -16,8 +16,4 @@ public:
     virtual ~Object();
 };
 
-Object **MyUnitTests();
-Object *MyUnitTests(Object **);
-Object *MyUnitTestsWrapTwice(Object **objects);
-
 #endif

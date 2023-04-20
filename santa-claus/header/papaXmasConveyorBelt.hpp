@@ -11,5 +11,5 @@ public:
     Object *take();
     Wrap *pressIn();
     void *pressOut();
-    std::string getWhat();
+    Object *getContent();
 };

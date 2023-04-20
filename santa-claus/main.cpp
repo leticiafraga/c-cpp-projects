@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
-#include "header/object.hpp"
-#include "header/wrap.hpp"
+#include <array>
 #include "header/littlePony.hpp"
 #include "header/teddy.hpp"
 #include "header/box.hpp"
@@ -35,11 +34,25 @@ int main()
     toys2[1] = box2;
     MyUnitTestsWrapTwice(toys2);
 
+    // part 3 - table
     std::cout << "Table test" << std::endl;
     ITable *table = createTable();
 
-    table->put(toys[1]);
-    std::cout << table->look()[0];
+    for (int i = 0; i < 11; i++)
+    {
+        table->put(new LittlePony("RainbowDash " + std::to_string(i)));
+    }
+
+    std::string *arr = table->look();
+    if (arr != nullptr)
+    {
+        for (int i = 0; i < 11; i++)
+        {
+            std::cout << arr[i] << std::endl;
+        }
+    }
+
+    // part 4 - elf
 
     return 0;
 }

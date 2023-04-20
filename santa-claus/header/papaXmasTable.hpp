@@ -7,7 +7,7 @@
 class PapaXmasTable : public ITable
 {
 private:
-    Object *items[10] = {nullptr};
+    Object **items;
     static const int size = 10;
     bool collapsed;
 
