@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+int readWord(char *word);
 void printGrid(int size, char *lines);
 int search(int position, int size, char *grid, int wordPosition, char *word);
 
@@ -17,8 +18,8 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    char *grid;
-    char *word = malloc(30 * sizeof(char));
+    char *grid = {'\0'};
+    char *word = malloc(50 * sizeof(char));
     word[0] = '\0';
 
     for (int i = 1; i < argc - 1; i++)
@@ -47,7 +48,7 @@ int main(int argc, char *argv[])
     if (!grid || strlen(grid) != squareSize)
     {
         fprintf(stderr, "The grid provided does not have the correct length (%d)\n", squareSize);
-        return 84;
+        exit(84);
     }
 
     int a;
@@ -55,7 +56,11 @@ int main(int argc, char *argv[])
     if (word[0] == '\0')
     {
         printGrid(size, grid);
-        scanf("%s", word);
+
+        if (readWord(word) != 1)
+        {
+            return 0;
+        }
     }
     while (word && strlen(word) > 0 && word[0] != '0' && word[0] != '\0')
     {
@@ -81,17 +86,31 @@ int main(int argc, char *argv[])
         }
         if (found == 0)
         {
-
             printf("The word \"%s\" is not in the grid.\n", word);
         }
 
-        word[0] = '\0';
-        scanf("%s", word);
+        if (readWord(word) != 1)
+        {
+            return 0;
+        }
     }
 
-    // free(word);
+    free(word);
 
     return (0);
+}
+
+int readWord(char *word)
+{
+    if (fgets(word, 50, stdin) == NULL)
+    {
+        fprintf(stderr, "Error reading word\n");
+        exit(84);
+    }
+
+    int res = sscanf(word, "%s", word);
+    word[strcspn(word, "\n")] = 0;
+    return res;
 }
 
 void printGrid(int size, char *lines)
