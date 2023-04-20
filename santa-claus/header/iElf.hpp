@@ -14,5 +14,5 @@ public:
     virtual void putConveyorBelt(Object *o) = 0;
     virtual Object *takeConveyorBelt() = 0;
     virtual Wrap *pressIn() = 0;
-    virtual void *pressOut() = 0;
+    virtual void pressOut() = 0;
 };

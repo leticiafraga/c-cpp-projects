@@ -34,9 +34,8 @@ Wrap *PapaXmasConveyorBelt::pressIn()
         int wrapType = rand() % 2;
         if (wrapType == 0)
             return new Box();
-        else
-            return new GiftPaper();
     }
+    return new GiftPaper();
 }
 
 void PapaXmasConveyorBelt::pressOut()

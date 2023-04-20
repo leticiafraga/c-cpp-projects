@@ -17,5 +17,5 @@ public:
     void putConveyorBelt(Object *o);
     Object *takeConveyorBelt();
     Wrap *pressIn();
-    void *pressOut();
+    void pressOut();
 };

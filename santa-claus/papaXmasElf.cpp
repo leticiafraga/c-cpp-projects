@@ -42,7 +42,7 @@ Wrap *PapaXmasElf::pressIn()
 {
     return this->conveyorBelt->pressIn();
 }
-void *PapaXmasElf::pressOut()
+void PapaXmasElf::pressOut()
 {
     this->conveyorBelt->pressOut();
 }

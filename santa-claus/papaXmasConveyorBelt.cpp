@@ -1,4 +1,9 @@
 #include "header/papaXmasConveyorBelt.hpp"
+#include "header/box.hpp"
+#include "header/giftPaper.hpp"
+
+#ifndef PAPA_XMAS_CONVEYOR_BELT
+#define PAPA_XMAS_CONVEYOR_BELT
 
 PapaXmasConveyorBelt::PapaXmasConveyorBelt()
 {
@@ -44,3 +49,5 @@ void PapaXmasConveyorBelt::pressOut()
     content = nullptr;
     std::cout << "Sending to Santa" << std::endl;
 }
+
+#endif
